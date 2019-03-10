@@ -1,0 +1,45 @@
+<script>
+
+ var sum = +prompt("Enter sum:");
+ 
+ var m = 12;
+ 
+ var r = 20; //% r- rate
+ 
+ var r_m = r / 1200;
+ 
+    //a , b, c пошаговые перименные
+	
+	var a = Math.pow((1 + r_m), m) - 1;
+  
+      var b = r_m / a ;
+  
+        var c = r_m + b;
+  
+  
+  var annuitet = Math.round(sum * c * 100) / 100;
+
+  
+  var sum2 = sum
+  
+    for(var i = 0; i < m; i++) {
+        
+		var percent_month = Math.round(sum2 * r_m * 100) / 100;
+        
+		var trust = annuitet - percent_month;
+        
+		var Body_part = Math.round((annuitet - percent_month) * 100) / 100;
+        
+		sum2 = sum2-trust;
+        
+		console.log("месяци:" + i + 1)
+        
+		console.log("Body part:" + Body_part);
+        
+		console.log("Percent sum:" + percent_month);
+    }
+
+     alert("оплата каждый месяц - " + annuitet);
+
+
+</script>
